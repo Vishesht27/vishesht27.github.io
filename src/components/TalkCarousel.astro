@@ -1,0 +1,63 @@
+---
+interface Props {
+    images: string[];
+}
+
+const { images } = Astro.props;
+---
+
+<div class="carousel">
+    {images.map((image, index) => (
+        <img
+            src={image}
+            alt={`Talk Image ${index + 1}`}
+            class={index === 0 ? 'active' : ''}
+        />
+    ))}
+</div>
+
+<style>
+    .carousel {
+        position: relative;
+        margin-bottom: 1rem;
+        border-radius: 8px;
+        overflow: hidden;
+        height: 300px;
+    }
+    .carousel img {
+        display: none;
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+    .carousel img.active {
+        display: block;
+        opacity: 1;
+    }
+</style>
+
+<script>
+    function setupCarousel() {
+        const carousels = document.querySelectorAll('.carousel');
+        
+        carousels.forEach(carousel => {
+            const images = carousel.querySelectorAll('img');
+            let currentIndex = 0;
+            
+            function showNextImage() {
+                images[currentIndex].classList.remove('active');
+                currentIndex = (currentIndex + 1) % images.length;
+                images[currentIndex].classList.add('active');
+            }
+            
+            setInterval(showNextImage, 4000);
+        });
+    }
+    
+    setupCarousel();
+</script>

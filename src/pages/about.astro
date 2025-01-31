@@ -1,0 +1,153 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ResearchCard from '../components/ResearchCard.astro';
+import TestimonialCarousel from '../components/TestimonialCarousel.astro';
+import SocialLinks from '../components/SocialLinks.astro';
+
+const research = [
+    {
+        title: 'Komodo-7B',
+        image: '/images/komodo.jpeg',
+        description: 'Large Language Models designed to address this gap by seamlessly operating across Indonesian, English, and 11 regional languages in Indonesia',
+        paperLink: 'https://arxiv.org/abs/2403.09362v1'
+    },
+    {
+        title: 'Beyond Extraction: Table Extractor for RAG',
+        image: '/images/table_extractor.jpeg',
+        description: 'This research introduces an innovative approach to enhance the accuracy of complex table queries in RAG-based systems',
+        paperLink: 'https://arxiv.org/abs/2401.02333'
+    },
+    {
+        title: 'Bahasa Harmony',
+        image: '/images/bahasa_model.png',
+        description: 'This research introduces a comprehensive Bahasa text-to-speech (TTS) dataset and a novel TTS model, EnGen-TTS, designed to enhance the quality and versatility of synthetic speech in the Bahasa language',
+        paperLink: 'https://arxiv.org/abs/2410.06608'
+    }
+];
+
+const testimonials = [
+    {
+        text: 'I had the pleasure of supervising Vishesh during his internship at Yellow.ai NLP Research team, and I can confidently say that he is a highly talented and dedicated individual. Vishesh quickly grasped complex concepts and demonstrated a strong passion for AI. Throughout his internship, Vishesh consistently delivered high-quality work, showing a keen attention to detail and a proactive approach to problem-solving. ',
+        author: 'Louis Owen',
+        image: '/images/louis_owen.jpeg',
+        role: 'Senior AI Research Engineer @ BlueOrion Limited'
+    },
+    {
+        text: 'Vishesh is an exceptional talent! His ability to execute tasks swiftly and efficiently, coupled with his strong analytical skills, made him a valuable asset during his internship. I highly recommend Vishesh for any role where dedication and proactive problem-solving are valued.',
+        author: 'Uday Allu',
+        image: '/images/uday_allu.jpeg',
+        role: 'Senior ML Engineer at Yellow.ai'
+    },
+    {
+        text: 'One of the most self-motivated people I know who wants to learn and apply everything there is about AI-ML. I have known him since he started his learning journey and he is someone you do not need to ask again and again to get things done in the right way with the right approach. He looks technical but he can easily solve any Non-technical problem as well through his structured problem-solving approach. ',
+        author: 'Vipul Jaiswal',
+        image: '/images/vipul_jaiswal.jpeg',
+        role: 'CEO office - Strategy at Stealth'
+    },
+    {
+        text: 'Had the pleasure of working closely with Vishesh on multiple projects during our time together at Yellow.ai. Vishesh played a key role in advancing our TTS system while simultaneously contributing significantly to our in-house LLM, Komodo. His dedication, technical expertise, and collaborative spirit were instrumental in driving both projects forward.We also had the opportunity to co-author a research paper on our novel in-house TTS system, which has been accepted at EMNLP 2025.',
+        author: 'Onkar Susladkar',
+        image: '/images/onkar.jpeg',
+        role: 'Machine Learning Research Engineer at Yellow.ai'
+    }
+];
+
+const socials = [
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/vishesh-tripathi/' },
+    { name: 'X', url: 'https://x.com/vishesh_t27'},
+    { name: 'Email', url: 'mailto:vishesht27@gmail.com'}
+];
+---
+
+<Layout title="About Me">
+    <h1>About Me</h1>
+
+    <p>Here you'll find information about me, my research, how to get in touch, testimonials, and details on how to schedule a mentorship session.</p>
+
+    
+    <section>
+        <h2>Research Work</h2>
+        <div class="research-grid">
+            {research.map(item => (
+                <ResearchCard {...item} />
+            ))}
+        </div>
+    </section>
+
+ <section>
+        <h2>Testimonials</h2>
+        <br>
+        <TestimonialCarousel testimonials={testimonials} />
+    </section>
+
+    <section id='connect_with_me'>
+        <h2>Contact Me</h2>
+        <br>
+        <div class="socials">
+     <h3 style="margin-bottom: 1rem; color: #333;">Email</h3>
+    <p style="margin-bottom: 1.5rem; line-height: 1.6; color: #555;">
+        The best way to reach me is via <a href="mailto:vishesht27@gmail.com" style="color: #007acc; text-decoration: none;">email</a>. I aim to respond to all emails. However, responses to longer or non-urgent emails may be delayed, and occasionally I may miss one. If you haven't heard back within a week, please follow up.
+    </p>
+
+    <h3 style="margin-bottom: 1rem; color: #333;">Social Media</h3>
+    <p style="margin-bottom: 1rem; line-height: 1.6; color: #555;">
+        I use social media, but don’t spend a lot of time on it. The services I use include:
+    </p>
+    <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="margin-bottom: 1rem; color: #555;">
+            <strong><a href="https://x.com/vishesh_t27" target="_blank" rel="noopener noreferrer" style="color: #007acc; text-decoration: none;">X</a>:</strong> 
+            I read posts and also post content regularly, pretty active here.
+        </li>
+        <li style="margin-bottom: 1rem; color: #555;">
+            <strong><a href="https://www.linkedin.com/in/vishesh-tripathi/" target="_blank" rel="noopener noreferrer" style="color: #007acc; text-decoration: none;">LinkedIn</a>:</strong> 
+            I read LinkedIn messages.
+        </li>
+        <li style="margin-bottom: 1rem; color: #555;">
+            <strong><a href="https://www.youtube.com/@Tensordroid" target="_blank" rel="noopener noreferrer" style="color: #007acc; text-decoration: none;">YouTube</a>:</strong> 
+            Regularly posting my video content.
+        </li>
+    </ul>
+            
+        </div>
+    </section>
+
+    <section id="mentorship_session">
+        <h2>Mentorship</h2>
+        <br>
+        <div class="card">
+        <h3>Interested in AI/ML? Let's Connect!</h3>
+        <p>I provide mentorship for those eager to explore the world of Artificial Intelligence and Machine Learning. Learn more and book a session below.</p>
+        <br>
+        <a href="https://unstop.com/mentor/vishesh?ref=kzVULcm" target="_blank" rel="noopener noreferrer">
+            Book a Session on Unstop →
+        </a>
+        <br>
+        <br>
+        <a href="https://topmate.io/vishesh_tripathi" target="_blank" rel="noopener noreferrer">
+            Book a Session on Topmate →
+        </a>
+
+        </div>
+    </section>
+</Layout>
+
+<style>
+    .research-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        margin: 2rem 0;
+    }
+
+    @media (max-width: 768px) {
+        .research-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    section {
+        margin: 3rem 0;
+    }
+
+
+</style>

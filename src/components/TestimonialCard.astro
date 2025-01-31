@@ -1,0 +1,59 @@
+---
+interface Props {
+    text: string;
+    author: string;
+    image: string;
+    role: string;
+}
+
+const { text, author, image, role } = Astro.props;
+---
+
+<div class="testimonial-card">
+    <p class="quote">{text}</p>
+    <div class="author-info">
+        <img src={image} alt={author} />
+        <div>
+            <p class="author-name">{author}</p>
+            <p class="author-role">{role}</p>
+        </div>
+    </div>
+</div>
+
+<style>
+    .testimonial-card {
+        border: 1px solid #eee;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-bottom: 1.5rem;
+    }
+
+    .quote {
+        font-style: italic;
+        margin-bottom: 1.5rem;
+    }
+
+    .author-info {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .author-name {
+        font-weight: 500;
+        margin: 0;
+    }
+
+    .author-role {
+        color: #666;
+        font-size: 0.9rem;
+        margin: 0;
+    }
+</style>

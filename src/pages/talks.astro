@@ -1,0 +1,75 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TalkCarousel from '../components/TalkCarousel.astro';
+
+const talks = [
+	{
+		title: 'Devfest Noida 2024',
+		location: 'Expo Inn Noida',
+		topic: 'Komodo-7B',
+		description: 'Detailed description of the talk...',
+		images: ['/images/dev_1.JPG', '/images/dev_2.JPG', '/images/dev_3.JPG']
+	},
+	{
+		title: 'GDG Innova 2024',
+		location: 'IIIT Delhi',
+		topic: 'Future of Gen-AI',
+		description: 'Detailed description of the talk...',
+		images: ['/images/gdg_1.jpg', '/images/gdg_2.jpg']
+	},
+		{
+		title: 'Sampurna 2023',
+		location: 'VIT Bhopal',
+		topic: 'How to win Hackathons and Competitons',
+		description: 'Detailed description of the talk...',
+		images: ['/images/samp_1.jpg']
+	},
+		{
+		title: 'MLSA Meetup 2022',
+		location: 'Microsoft Gurugram',
+		topic: 'How to win Imagine Cup',
+		description: 'Detailed description of the talk...',
+		images: ['/images/mlsa_1.JPG', '/images/mlsa_2.JPG']
+	}
+];
+---
+
+<Layout title="Talks">
+
+	<h1>Invite me to Talk</h1>
+	<br>
+	<p> I’m open to sharing my work, knowledge, and experience to benefit the audience. </p>
+
+
+
+	<p>
+		You can <a href="/about#connect_with_me">contact</a> me for inquiries.
+	</p>
+	<br>
+	<br>
+
+
+    <h1>Previous Talks</h1>
+    
+    {talks.map(talk => (
+        <div class="talk-card card">
+            <TalkCarousel images={talk.images} />
+            <div class="talk-info">
+                <h2>{talk.title}</h2>
+                <p class="location">{talk.location}</p>
+                <p class="topic">Topic: {talk.topic}</p>
+                <p>{talk.description}</p>
+            </div>
+        </div>
+    ))}
+</Layout>
+
+<style>
+    .talk-card {
+        margin-bottom: 3rem;
+    }
+    .location, .topic {
+        color: #666;
+        margin-bottom: 0.5rem;
+    }
+</style>

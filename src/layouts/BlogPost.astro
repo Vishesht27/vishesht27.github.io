@@ -1,0 +1,93 @@
+---
+import Layout from './Layout.astro';
+import SocialLinks from '../components/SocialLinks.astro';
+
+interface Props {
+    title: string;
+    date: string;
+    readingTime: string;
+    author: string;
+    nextPost?: {
+        title: string;
+        slug: string;
+    };
+}
+
+const { title, date, readingTime, author, nextPost } = Astro.props;
+---
+
+<Layout title={title}>
+    <article class="blog-post">
+        <header>
+            <h1>{title}</h1>
+            <div class="meta">
+                <span>Date: {date}</span>
+                <span>|</span>
+                <span>Reading Time: {readingTime}</span>
+                <span>|</span>
+                <span>Author: {author}</span>
+            </div>
+        </header>
+
+        <div class="content">
+            <slot />
+        </div>
+
+        {nextPost && (
+            <div class="next-post">
+                <p>Next Post</p>
+                <a href={nextPost.slug}>{nextPost.title} →</a>
+            </div>
+        )}
+
+
+    </article>
+</Layout>
+
+<style>
+    .blog-post {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem 0;
+    }
+    header {
+        margin-bottom: 2rem;
+    }
+    .meta {
+        color: #666;
+        margin-top: 1rem;
+    }
+    .meta span {
+        margin: 0 0.5rem;
+    }
+    .meta span:first-child {
+        margin-left: 0;
+    }
+    .content {
+        line-height: 1.8;
+    }
+    .content :global(img) {
+        max-width: 100%;
+        border-radius: 8px;
+        margin: 2rem 0;
+    }
+    .next-post {
+        margin-top: 4rem;
+        padding-top: 2rem;
+        border-top: 1px solid #eee;
+    }
+    .next-post p {
+        color: #666;
+        font-size: 0.9rem;
+    }
+    .next-post a {
+        color: #111;
+        text-decoration: none;
+        font-weight: 500;
+    }
+    footer {
+        margin-top: 4rem;
+        padding-top: 2rem;
+        border-top: 1px solid #eee;
+    }
+</style>

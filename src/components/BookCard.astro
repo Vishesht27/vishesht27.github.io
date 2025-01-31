@@ -1,0 +1,64 @@
+---
+interface Props {
+    title: string;
+    author: string;
+    thoughts: string;
+    image: string;
+}
+
+const { title, author, thoughts, image } = Astro.props;
+---
+
+<div class="book-card">
+    <div class="content">
+        <h3>{title}</h3>
+        <p class="author">by {author}</p>
+        <p class="thoughts">{thoughts}</p>
+    </div>
+    <div class="book-image">
+        <img src={image} alt={title} />
+    </div>
+</div>
+
+<style>
+    .book-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        gap: 2rem;
+        border: 1px solid #eee;
+        padding: 1.5rem;
+        border-radius: 8px;
+    }
+
+    .content {
+        flex: 1;
+    }
+
+    h3 {
+        margin: 0 0 0.5rem 0;
+    }
+
+    .author {
+        color: #666;
+        font-style: italic;
+        margin-bottom: 1rem;
+    }
+
+    .thoughts {
+        color: #444;
+        line-height: 1.6;
+    }
+
+    .book-image {
+        flex-shrink: 0;
+        width: 100px;
+    }
+
+    .book-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+</style>

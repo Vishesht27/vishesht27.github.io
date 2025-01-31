@@ -1,0 +1,76 @@
+---
+interface Props {
+    title: string;
+    excerpt: string;
+    date: string;
+    readingTime: string;
+    author: string;
+    slug: string;
+}
+
+const { title, excerpt, date, readingTime, author, slug } = Astro.props;
+---
+
+<article class="blog-card">
+    <h2>{title}</h2>
+    <p class="excerpt">{excerpt}</p>
+    <div class="meta">
+        <span>Date: {date}</span>
+        <span>|</span>
+        <span>Estimated Reading Time: {readingTime}</span>
+        <span>|</span>
+        <span>Author: {author}</span>
+    </div>
+    <a href={slug} class="read-more">Read more →</a>
+</article>
+
+<style>
+    .blog-card {
+        border: 1px solid #eee;
+        padding: 2rem;
+        border-radius: 8px;
+        margin-bottom: 2rem;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .blog-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        margin: 0 0 1rem 0;
+        font-size: 1.5rem;
+    }
+
+    .excerpt {
+        color: #444;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+
+    .meta {
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 1rem;
+    }
+
+    .meta span {
+        margin: 0 0.5rem;
+    }
+
+    .meta span:first-child {
+        margin-left: 0;
+    }
+
+    .read-more {
+        display: inline-block;
+        color: #111;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .read-more:hover {
+        text-decoration: underline;
+    }
+</style>

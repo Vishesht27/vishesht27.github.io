@@ -1,0 +1,60 @@
+---
+const socials = [
+    {
+        name: 'Vishesh Tripathi',
+        icon: '/images/icons8-linkedin.svg',
+        url: 'https://www.linkedin.com/in/vishesh-tripathi/'
+    },
+    {
+        name: 'vishesh_t27',
+        icon: '/images/x_logo.svg',
+        url: 'https://x.com/vishesh_t27'
+    },
+    {
+        name: 'vishesht27@gmail.com',
+        icon: '/images/gmail_logo.svg',
+        url: 'mailto:vishesht27@gmail.com'
+    },
+        {
+        name: 'Tensordroid',
+        icon: '/images/youtube-svgrepo-com.svg',
+        url: 'https://www.youtube.com/@Tensordroid'
+    }
+];
+---
+
+<div class="social-links">
+    {socials.map(social => (
+        <a href={social.url} target="_blank" rel="noopener noreferrer" class="social-link">
+            <img src={social.icon} alt={social.name} />
+            <span>{social.name}</span>
+        </a>
+    ))}
+</div>
+
+<style>
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+    .social-link {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        text-decoration: none;
+        color: #666;
+        padding: 0.5rem 1rem;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        transition: all 0.2s;
+    }
+    .social-link:hover {
+        background: #f5f5f5;
+        transform: translateY(-2px);
+    }
+    .social-link img {
+        width: 20px;
+        height: 20px;
+    }
+</style>

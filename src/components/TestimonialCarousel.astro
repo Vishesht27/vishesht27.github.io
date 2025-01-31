@@ -1,0 +1,160 @@
+---
+interface Testimonial {
+    text: string;
+    author: string;
+    image: string;
+    role: string;
+}
+
+interface Props {
+    testimonials: Testimonial[];
+}
+
+const { testimonials } = Astro.props;
+---
+
+<div class="testimonial-carousel">
+    <div class="carousel-container">
+        {testimonials.map((testimonial, index) => (
+            <div class="testimonial-slide" data-index={index}>
+                <p class="quote">{testimonial.text}</p>
+                <div class="author-info">
+                    <img src={testimonial.image} alt={testimonial.author} />
+                    <div>
+                        <p class="author-name">{testimonial.author}</p>
+                        <p class="author-role">{testimonial.role}</p>
+                    </div>
+                </div>
+            </div>
+        ))}
+    </div>
+    <div class="carousel-indicators">
+        {testimonials.map((_, index) => (
+            <button 
+                class="indicator" 
+                data-index={index} 
+                aria-label={`Go to slide ${index + 1}`}
+            ></button>
+        ))}
+    </div>
+</div>
+
+<style>
+    .testimonial-carousel {
+        border: 1px solid #eee;
+        padding: 2rem;
+        border-radius: 8px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .carousel-container {
+        position: relative;
+        height: 200px;
+    }
+
+    .testimonial-slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+        padding: 1rem;
+    }
+
+    .testimonial-slide.active {
+        opacity: 1;
+    }
+
+    .quote {
+        font-style: italic;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+    }
+
+    .author-info {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .author-name {
+        font-weight: 500;
+        margin: 0;
+    }
+
+    .author-role {
+        color: #666;
+        font-size: 0.9rem;
+        margin: 0;
+    }
+
+    .carousel-indicators {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    .indicator {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        border: none;
+        background-color: #ddd;
+        cursor: pointer;
+        padding: 0;
+    }
+
+    .indicator.active {
+        background-color: #666;
+    }
+</style>
+
+<script>
+    function setupCarousel() {
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const indicators = document.querySelectorAll('.indicator');
+        let currentSlide = 0;
+        const slideCount = slides.length;
+
+        function showSlide(index: number) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            indicators.forEach(indicator => indicator.classList.remove('active'));
+            
+            slides[index].classList.add('active');
+            indicators[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slideCount;
+            showSlide(currentSlide);
+        }
+
+        // Show first slide initially
+        showSlide(0);
+
+        // Set up automatic rotation
+        setInterval(nextSlide, 5000);
+
+        // Set up indicator clicks
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                currentSlide = index;
+                showSlide(currentSlide);
+            });
+        });
+    }
+
+    // Run setup when the component mounts
+    setupCarousel();
+</script>

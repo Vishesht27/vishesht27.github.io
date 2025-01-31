@@ -1,0 +1,48 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import BlogCard from '../../components/BlogCard.astro';
+
+const posts = [
+
+    {
+        title: 'Intro to Agents',
+        slug: '/blog/understanding_agents',
+        excerpt: 'What exactly are Agents, are they the future, and how they can revolutionize the whole world.',
+        date: 'February 1, 2025',
+        readingTime: '20 min',
+        author: 'Vishesh Tripathi'
+    },
+
+    {
+        title: 'Intro to Large Language Models and and their Future',
+        slug: '/blog/understanding-llms',
+        excerpt: 'An in-depth exploration of how Large Language Models work and their impact on modern AI applications. We will dive into the architecture, training process, and real-world applications.',
+        date: 'December 28, 2024',
+        readingTime: '37 min',
+        author: 'Vishesh Tripathi'
+    },
+
+];
+---
+
+<Layout title="Blog">
+    <h1>Blog Posts</h1>
+    <div class="posts">
+        {posts.map(post => (
+            <BlogCard
+                title={post.title}
+                excerpt={post.excerpt}
+                date={post.date}
+                readingTime={post.readingTime}
+                author={post.author}
+                slug={post.slug}
+            />
+        ))}
+    </div>
+</Layout>
+
+<style>
+    h1 {
+        margin-bottom: 2rem;
+    }
+</style>

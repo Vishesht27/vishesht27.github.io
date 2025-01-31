@@ -1,0 +1,115 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Vishesh Tripathi">
+    <div class="intro">
+        <div class="bio">
+ 		<p>Vishesh Tripathi, LLM Research Engineer.</p>
+		<p>Tuning life's parameters, one epoch at a time.</p>
+		<p>Previously a Machine Learning Engineer at Yellow.ai and the Indian Institute of Technology. Founder of Kisaan Pro and winner of multiple hackathons and competitions.</p>
+		<p>Graduate of Vellore Institute of Technology. I also run the YouTube channel, Tensordroid, with over 850 subscribers. I enjoy reading and playing musical instruments, especially the flute and guitar.</p>
+		<p>I frequently speak at <a href="/talks">Tech Events</a> and offer <a href="/about#mentorship_session">Mentorship Sessions</a>.</p>
+		<p> I am passionate about tackling complex technical challenges and collaborating with high-performing teams. Please feel free to <a href="/about#connect_with_me">reach out<a/> if you are interested in exploring potential collaborations</p>
+		</div>
+        <div class="profile-section">
+            <div class="profile-image">
+                <img src="/images/devfest_pic.JPG" alt="Vishesh Tripathi" />
+            </div>
+            <div class="quote-box">
+                <blockquote>
+                    <p class="sanskrit">The way I see it, every life is a pile of good things and bad things. The good things don’t always soften the bad things, but vice versa, the bad things don’t always spoil the good things and make them unimportant.</p>
+                    <cite>The Eleventh Doctor</cite>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</Layout>
+
+<style>
+    .intro {
+        display: flex;
+        gap: 2rem;
+        align-items: start;
+        padding-top: 2rem;
+    }
+
+    .profile-section {
+        flex-shrink: 0;
+        width: 280px;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+    }
+
+    .profile-image {
+        width: 250px;
+        height: 250px;
+    }
+
+    .profile-image img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .quote-box {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 1rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        width: 100%;
+        text-align: center;
+    }
+
+    .sanskrit {
+        font-family: 'Sanskrit Text', serif;
+        line-height: 1.6;
+        margin-bottom: 0.5rem;
+        color: #333;
+        font-size: 0.85rem;
+    }
+
+    blockquote cite {
+        display: block;
+        margin-top: 0.5rem;
+        font-size: 0.75rem;
+        color: #666;
+    }
+
+    .bio {
+        flex-grow: 1;
+    }
+
+    .bio p {
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+        line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+        .intro {
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .profile-section {
+            width: 100%;
+            order: -1;
+        }
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+        }
+
+        .quote-box {
+            max-width: 280px;
+        }
+    }
+</style>

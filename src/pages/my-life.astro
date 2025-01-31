@@ -1,0 +1,308 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BlogCard from '../components/BlogCard.astro';
+import BookCard from '../components/BookCard.astro';
+
+const books = [
+    {
+        title: 'The Demon Haunted World',
+        author: 'Carl Sagan',
+        thoughts: 'This is one of the best books I have ever read. From aliens to monsters, it reveals how pseudo-science still haunts our world, while technology and science are our lifeline. It also explores the power of human imagination when driven by emotion, not logic. A truly eye-opening read. Carl Sagan is a legend 🔥',
+        image: '/images/demon_world.png'
+    },
+    {
+        "title": "Parashuram: Blood and Dharma",
+        "author": "Arnav Anand & Mona Singh",
+        "thoughts": "This book offers a unique take on Parashuram, an avatar of Vishnu often less explored. The story is brought to life with a distinctive manga-style animation.",
+        "image": "/images/prashuram.png"
+    },
+    {
+        title: 'Own Your Body',
+        author: 'Shiv Kumar Sarin',
+        thoughts: 'I was not interested in health books before, but this one changed my mind. It taught me a lot about the body and the importance of the liver. I even got a full health checkup for me and my family, after reading it! A must-read for anyone wanting to stay healthy',
+        image: '/images/own_your_body.png'
+    },
+    {
+        title: 'Hands on LLM',
+        author: 'Jay Alammar',
+        thoughts: 'I have read many ML books, but this one by Jay Alammar is a standout. It covers everything from AI basics to complex LLM architectures. Whether you are a beginner or intermediate, you will definitely learn something new. His in-depth explanations of embeddings and tokenization are excellent.',
+        image: '/images/hands_on_llm.jpg'
+    },
+    {
+        "title": "The Hitchhiker's Guide to the Galaxy: Full Set",
+        "author": "Douglas Adams",
+        "thoughts": "This is a perfect sci-fi fantasy book series. You'll enjoy the time travel journey, which is filled with an awesome punch of humor. Must read if you are fan of time and space.",
+        "image": "/images/hitchhikers.png"
+    },
+    {
+        "title": "How to Win Friends and Influence People",
+        "author": "Dale Carnegie",
+        "thoughts": "If you're getting this book, make it a yearly read. Carry it with you, read it often, and most importantly, put its lessons into practice. You'll master the art of connecting with and handling people in all situations.",
+        "image": "/images/how_to_win.png"
+    },
+    {
+        "title": "When did the Mahabharat War Happen? The mystery of Arrundhati",
+        "author": "Nilesh Oak",
+        "thoughts": "Imagine the dedication it takes to spend decades uncovering the exact date of the most important cultural event! Nilesh Oak's work is phenomenal, and this book is a testament to his obsession. The mystery of Arundhati will keep you hooked, and while some astronomical and mathematical knowledge is helpful, the payoff is immense. You'll be rewarded with awesome insights and a deep sense of satisfaction.",
+        "image": "/images/mahabharat_war.png"
+    },
+    {
+        title:'Algorithms to Live By',
+        author:'Brian Christian & Tom Griffiths',
+        thoughts: 'Overall it can be mind melting and boring sometimes, but it is really good. This book is not for the faint of heart, but for those willing to engage in some serious mental calisthenics, it offers a unique and deeply insightful perspective on the intersection of mathematics, computer science, and real-world problems. Its a challenging but ultimately enriching experience.',
+        image:'/images/algorithms.png'
+    },
+    {
+        "title": "Unfinished Tales",
+        "author": "J.R.R Tolkien",
+        "thoughts": "Tolkien's imagination shines in this collection of stories that expands upon 'The Hobbit,' 'The Lord of the Rings,' and 'The Silmarillion.' A must-read for those wanting to delve deeper into his world.",
+        "image": "/images/unfinished_tales.png"
+    },
+    {
+        "title": "The Silmarillion",
+        "author": "J.R.R Tolkien",
+        "thoughts": "The foundational text for Middle-earth. While challenging, it's a must-read for dedicated Tolkien fans seeking the origins of its history and lore.",
+        "image": "/images/silmarillion.png"
+    },
+    {
+        title:'Mahabharat Unravelled II',
+        author:'Ami Ganatra',
+        thoughts: 'Detailed versions of all the Dharma discourses in Mahabharata. Bought this book because the previous book was awesome, and so is this.',
+        image:'/images/mahabharat_un_2.png'
+    },
+    {
+        "title": "Mahabharat Unravelled",
+        "author": "Ami Ganatra",
+        "thoughts": "This book explores the meaning of Dharma and reveals lesser-known aspects of the Mahabharat. Its clear writing style makes complex concepts easy to understand.",
+        "image": "/images/mahabharat_un_1.png"
+    },
+    {
+        title:'Ramayan Unravelled',
+        author:'Ami Ganatra',
+        thoughts: 'This book shows the perspective of all characters and it beautifully shows the love of Lord Ram and Mata Sita. Ramayan is something you can read whenever you want because: सीता राम चरित अति पावन। मधुर सरस और अति मनभावन॥ पुनि पुनि कितनेहू सुने सुनाये। हिय की प्यास बुझत न बुझाए॥',
+        image:'/images/ramayan_unravelled.png'
+    },
+    {
+        "title": "The Hobbit",
+        "author": "J.R.R. Tolkien",
+        "thoughts": "hts: 'The journey of Biblo Baggins. You will feel sad when the story ends. From the entry of Gandalf to the battle of five armies, every aspect is wonderful. The hobbits' pure, funny, innocent, grateful, and surprisingly skilled nature will capture your heart. Their love for food and comfort is both a source of laughter and a warm embrace. This enthralling story is a tapestry of wonder, challenges, moments of rest, war, loss, and ultimately, peace and triumph.",
+        "image": "/images/hobbit.png"
+    },
+    {
+        title:'The Lord of the Rings: Trilogy',
+        author:'J.R.R Tolkien',
+        thoughts: "Bilbo's nephew Mr Frogo Baggins, is now on another awesome adventue, you will see monsters, goblins, wizards, elves, dwarves and the DARK LORD !! Oskar winning trilogy, so just go for it !!",
+        image:'/images/lord_of_the_rings.png'
+    },
+    {
+        "title": "Stardust",
+        "author": "Neil Gaiman",
+        "thoughts": "This is such a beautiful love story, reminding us that sometimes what we're looking for is also looking for us. The hero's journey is about learning what love truly means through acts of caring, and the story beautifully captures the transformation and love between two characters who are so different.",
+        "image": "/images/stardust.png"
+    },
+    {
+        "title": "The Power of your subconscious Mind",
+        "author": "Dr Joseph Murphy",
+        "thoughts": "Strong will + your mind = anything is possible. This book proves it.",
+        "image": "/images/power_of_mind.png"
+    },
+    {
+        title:'The Richest Man in Bablylon',
+        author:'George S.Clason',
+        thoughts: 'It is a beautiful and enduring way to access Clason timeless financial wisdom. The book has simple parables which teaches us essential principles of saving and investing, making it a valuable read for all.',
+        image:'/images/richest_man_in_babylon.png'
+    },
+    {
+        title:'Spiderman India',
+        author:'Marvel',
+        thoughts: 'It is just fun and you will enjoy your time reading it, as it is friendly neighbourhood spiderman, but in INDIA !!',
+        image:'/images/spider_man.png'
+    },
+    {
+        title:'Think and Grow Rich',
+        author:'Napolean Hill',
+        thoughts: 'A Descent Read. Good book to read, it will boost the positive thinking inside you.',
+        image:'/images/think_an_grow_rich.png'
+    },
+];
+
+const articles = [
+
+        {
+        title: 'Being a Jack of all trades',
+        slug: '/my-life/jack_of_all_trades',
+        excerpt: 'Exploring the power of being multidimensional in a world that often pushes for specialization, and why being a "Jack of all trades" might be exactly what the future needs.',
+        date: 'February 5, 2025',
+        readingTime: '8 min',
+        author: 'Vishesh Tripathi'
+        },
+
+        {
+        title: 'The JEE Impact',
+        slug: '/my-life/jee_impact',
+        excerpt: "JEE, India's toughest engineering entrance exam, shapes not just college admissions but molds teenagers' mindsets, work ethics, and problem-solving abilities for life. The intense preparation period becomes a defining chapter, teaching resilience and systematic thinking that stays with students long after the exam is over.",
+        date: 'January 20, 2025',
+        readingTime: '10 min',
+        author: 'Vishesh Tripathi'
+    },
+
+    {
+        title: 'Shifting to Mumbai from Delhi',
+        slug: '/my-life/delhi_to_mumbai',
+        excerpt: 'Recently I shifted from Delhi to Mumbai, sharing my experience till now !',
+        date: 'January 15, 2025',
+        readingTime: '10 min',
+        author: 'Vishesh Tripathi'
+    },
+];
+
+const bucketList = [
+    { task: 'Get Featured in the Economic Times', completed: true },
+    { task: 'Win 5 Hackathons/Competitions', completed: true },
+    { task: 'Publish a Research Paper', completed: true },
+    { task: 'Get a Paper Accepted at EMNLP', completed: true },
+    { task: 'Speak at an IIT', completed: false },
+    { task: 'Go Scuba-Diving', completed: false },
+    { task: 'Go Skydiving', completed: false },
+    { task: 'Go Bungee Jumping', completed: false },
+    { task: 'Camping', completed: true },
+    { task: 'Go Paragliding', completed: true },
+    { task: 'Ride a Desert Safari', completed: true },
+    { task: 'Go on a Jungle Safari', completed: true },
+    { task: 'Visit Haunted Forts', completed: true },
+    { task: 'Learn to Play the Flute', completed: true },
+    { task: 'Travel to South East Asian Countries', completed: false },
+    { task: 'Read 100 Books', completed: false },
+    { task: 'Run a Marathon', completed: true },
+    { task: 'Achieve an 8-Digit Finance Portfolio', completed: false},
+    { task: 'Attend a Coldplay/Green Day Concert', completed: false },
+    { task: 'Go on a Cruise', completed: false },
+    { task: 'Go on a Trek', completed: false },
+    { task: 'Create my own Python Library/Package', completed: false },
+    { task: 'Visit Egypt and Nile', completed: false },
+    { task: 'Wear a Costume at Comic Con', completed: false },
+    { task: 'Visit Ayodhya and the Ram Mandir', completed: false },
+    { task: 'Attend an ML Conference', completed: false },
+    { task: 'Visit Hobbit Homes in New Zealand', completed: false },
+    { task: 'Watch the Northern Lights in Norway', completed: false },
+    { task: 'Finding the ultimate Purpose', completed: false },
+    { task: "trouver l'amour de la vie", completed: false },
+];
+
+
+const completedTasks = bucketList.filter(item => item.completed).length;
+const totalTasks = bucketList.length;
+---
+
+<Layout title="My Life">
+    <h1>My Life</h1>
+    
+    <div class="tabs">
+        <button class="tab-btn active" data-tab="books">Books</button>
+        <button class="tab-btn" data-tab="articles">Articles</button>
+        <button class="tab-btn" data-tab="bucket-list">Bucket List</button>
+    </div>
+
+    <div class="tab-content active" id="books">
+        <h2>Books I've Read</h2>
+        <div class="books-grid">
+            {books.map(book => (
+                <BookCard {...book} />
+            ))}
+        </div>
+    </div>
+
+    <div class="tab-content" id="articles">
+        <h2>Life Articles</h2>
+        {articles.map(article => (
+            <BlogCard {...article} />
+        ))}
+    </div>
+
+    <div class="tab-content" id="bucket-list">
+        <h2>My Bucket List</h2>
+        <p class="bucket-list-progress">
+            Things I want to do !! Recommendations are welcome !!<br>
+            Progress as of january 1, 2025: {completedTasks}/{totalTasks}
+        </p>
+        <ul class="bucket-list">
+            {bucketList.map(item => (
+                <li class={item.completed ? 'completed' : ''}>
+                    <input 
+                        type="checkbox" 
+                        checked={item.completed} 
+                        disabled 
+                    />
+                    <span>{item.task}</span>
+                </li>
+            ))}
+        </ul>
+    </div>
+</Layout>
+
+<style>
+    .tabs {
+        display: flex;
+        gap: 1rem;
+        margin: 2rem 0;
+    }
+    .tab-btn {
+        padding: 0.5rem 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+        border-bottom: 2px solid transparent;
+    }
+    .tab-btn.active {
+        border-bottom-color: #111;
+    }
+    .tab-content {
+        display: none;
+    }
+    .tab-content.active {
+        display: block;
+    }
+    .books-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin: 2rem 0;
+    }
+    .bucket-list-progress {
+        margin: 1rem 0;
+        padding: 1rem;
+        background: #f5f5f5;
+        border-radius: 4px;
+    }
+    .bucket-list {
+        list-style: none;
+        margin: 1rem 0;
+    }
+    .bucket-list li {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 0;
+    }
+    .bucket-list li.completed span {
+        text-decoration: line-through;
+        color: #666;
+    }
+</style>
+
+<script>
+    const tabs = document.querySelectorAll('.tab-btn');
+    const contents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const target = tab.dataset.tab;
+            
+            tabs.forEach(t => t.classList.remove('active'));
+            contents.forEach(c => c.classList.remove('active'));
+            
+            tab.classList.add('active');
+            document.getElementById(target)?.classList.add('active');
+        });
+    });
+</script>
