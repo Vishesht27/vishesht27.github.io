@@ -1,0 +1,1 @@
+import"./hoisted.DP8huS3u.js";function l(){document.querySelectorAll(".carousel").forEach(s=>{const t=s.querySelectorAll("img");let e=0;function c(){t[e].classList.remove("active"),e=(e+1)%t.length,t[e].classList.add("active")}setInterval(c,4e3)})}l();
