@@ -1,1 +1,0 @@
-document.addEventListener("DOMContentLoaded",function(){const n=document.getElementById("mobile-menu-toggle"),e=document.getElementById("nav-links");n&&e&&(n.addEventListener("click",function(){e.classList.toggle("active")}),e.querySelectorAll("a").forEach(t=>{t.addEventListener("click",function(){e.classList.remove("active")})}))});

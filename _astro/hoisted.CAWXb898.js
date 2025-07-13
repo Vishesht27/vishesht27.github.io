@@ -1,1 +1,0 @@
-import"./hoisted.DP8huS3u.js";const c=document.querySelectorAll(".tab-btn"),s=document.querySelectorAll(".tab-content");c.forEach(t=>{t.addEventListener("click",()=>{const a=t.dataset.tab;c.forEach(e=>e.classList.remove("active")),s.forEach(e=>e.classList.remove("active")),t.classList.add("active"),document.getElementById(a)?.classList.add("active")})});
