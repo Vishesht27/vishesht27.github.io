@@ -5,130 +5,311 @@ import BookCard from '../components/BookCard.astro';
 
 const books = [
     {
+        title: 'After Dark',
+        author: 'Haruki Murakami',
+        thoughts: 'This was a completely new kind of read for me. I know Murakami is famous for this. The whole book (~200 pages) covers a single night; new characters come and go, and you are an observer. The stories are interesting, and the last 50 pages really pull you in, but by the end you are left with many unanswered questions and a neutral ending—you never quite know what actually happened. Still, I would recommend giving it a shot. It is an interesting take.',
+        image: '/images/books/after_dark.png'
+    },
+    {
+        title: 'Siddhartha',
+        author: 'Hermann Hesse',
+        thoughts: 'A must-read; I would rate it 5/5. If you love philosophy and wonder about the meaning of life, this book is for you. There is a small fraction of people who keep personal teachings above existing ideologies, and this book shows why they are often the ultimate winners. Just go for it.',
+        image: '/images/books/sidhartha.png'
+    },
+    {
+        title: 'The Picture of Dorian Gray',
+        author: 'Oscar Wilde',
+        thoughts: 'Oscar Wilde has a distinctive style of writing. The first one or two chapters may feel slow, but from the third onward things get interesting. You see how a person\'s soul can be corrupted through words and books. If you love philosophy and literature, it is a luxury—a person with an angel\'s face and the devil inside.',
+        image: '/images/books/the_picture_of_dorian_grey.png'
+    },
+    {
+        title: 'The Haunted Doorway',
+        author: 'Jay Alani & Neil D\'Silva',
+        thoughts: 'I have been a fan of Jay Alani since 2020, when I first heard him speak. The stories and truths he covers here reflect much of India\'s haunted-place problem: why science and psychology are still taboo, and how easy it is to declare someone mad or a place haunted. The writing is really good, and each chapter shows the other side of the story you usually hear from locals and friends.',
+        image: '/images/books/haunted_doorway.png'
+    },
+    {
+        title: 'Zero to One',
+        author: 'Peter Thiel',
+        thoughts: 'After reading multiple self-help books, this one feels different because it comes from someone who has actually built something, not just written. It reads more like notes from someone successful than a typical book. If you are building your own startup, this can help.',
+        image: '/images/books/zero_to_one.png'
+    },
+    {
+        title: 'The Art of Letting Go',
+        author: 'Nick Trenton',
+        thoughts: 'I have mixed feelings about this book. It does not tell you anything new or throw out raw facts; it mostly repeats what most close ones would tell you if you are in a rough patch. Personally, I would recommend skipping this one.',
+        image: '/images/books/the_art_of_letting_go.png'
+    },
+    {
+        title: 'Why Are We This Way',
+        author: 'Ami Ganatra',
+        thoughts: 'Ami Ganatra has done it again. She has this gift for explaining complex ideas from Hindu shastras and puranas in simple words anyone can understand. A good book on how our stories and beliefs evolved—from devatas as the main gods to becoming demigods, and the Tridev taking centre stage. Just awesome.',
+        image: '/images/books/why_we_are_this_way.png'
+    },
+    {
+        title: 'Tuesdays with Morrie',
+        author: 'Mitch Albom',
+        thoughts: 'A beautiful and deeply moving book that gives a real perspective on life and death. I totally loved it.It shows how a person who knows their time is limited starts valuing what truly matters. The lessons feel simple yet profound when seen through Morrie\'s journey. It\'s emotional, insightful, and a must-read for everyone seeking meaning in life. ',
+        image: '/images/books/tuesdays_with_morrie.jpeg'
+    },
+    {
+        title: 'The Midnight Library',
+        author: 'Matt Haig',
+        thoughts: 'A powerful book about regret, guilt, and second chances. It highlights how living in "what could have been" is often pointless because alternate choices don\'t guarantee a better life. The story gives a comforting perspective on accepting your past. It\'s especially impactful if you struggle with overthinking your decisions.',
+        image: '/images/books/midnight_library.jpeg'
+    },
+    {
+        title: 'The $100 Startup',
+        author: 'Chris Guillebeau',
+        thoughts: 'A practical and motivating book for anyone wanting to start something of their own with minimal resources. It shows that you don\'t need huge capital to build a meaningful business. However, many examples feel slightly outdated today. Still, the core ideas and mindset it promotes are very valuable.',
+        image: '/images/books/The_100_Startup.jpg'
+    },
+    {
+        title: 'Sugriv\'s Atlas',
+        author: 'Nilesh Oak',
+        thoughts: 'Just GO AND READ IT !! An incredibly fascinating book that connects ancient texts like the Ramayana with modern geography. It explains Sugriv\'s knowledge of the world using shlokas and maps them to present-day locations. The parallels are surprisingly accurate and thought-provoking. A must-read for anyone interested in history, and geography.',
+        image: '/images/books/sugriva_atlas.png'
+    },
+    {
+        title: 'Meditations',
+        author: 'Marcus Aurelius',
+        thoughts: 'A classic philosophical work with timeless ideas, but not very engaging for everyone. As I also didn\'t resonate with it, I didn\'t finish it. While it contains deep insights about life and discipline, it can feel hard to relate to at times. It\'s more reflective than practical. Worth reading once, but may not resonate with everyone.',
+        image: '/images/books/meditation.png'
+    },
+    {
+        title: 'The Art of Spending Money',
+        author: 'Morgan Housel',
+        thoughts: "An incredible read that I absolutely couldn't put down. It's even more insightful than Morgan's previous works. I found myself taking numerous notes and have already started applying its lessons to my life. A true wealth of knowledge waits within these pages. A high recommendation!",
+        image: '/images/books/art_of_spending_Money.png'
+    },
+    {
+        title: 'The Alchemist',
+        author: 'Paulo Coelho',
+        thoughts: "A good tale with a profound message. It teaches that the true treasure isn't always what we seek in the distance, but often lies in the journey and the wisdom we acquire about life itself.",
+        image: '/images/books/the_alchemist.jpg'
+    },
+    {
+        title: 'Crime & Punishment',
+        author: 'Fyodor Dostoevsky',
+        thoughts: "A decent read, though it didn't quite resonate with me. While it has its moments, I found certain plot points predictable and some sections felt a bit extraneous to the core narrative.",
+        image: '/images/books/crime_and_punishment.jpg'
+    },
+    {
+        title: 'Metamorphosis',
+        author: 'Franz Kafka',
+        thoughts: "A short 60-page read. It explores the darker realities of conditional love and human value, showing how care often lasts only as long as one's utility. A sad reminder of the transactional nature of some relationships.",
+        image: '/images/books/metamorphisis.jpg'
+    },
+
+    {
+        title: 'We who wrestle with god',
+        author: 'Jordan Peterson',
+        thoughts: "While Peterson writing is in depth, the spiritual framework didn't fully connect with me given my different religious background. I can appreciate the literature quality and philosophical aspects, even though the core theological premises exist somewhat outside my personal belief system",
+        image: '/images/books/we_who_wretle.png'
+    },
+    {
+        title: 'What do you care what other people think',
+        author: 'FEYNMAN RICHARD P',
+        thoughts: "Feynman captures life's essence with simplicity and charm. The book is like a simple and funny journey - mostly smooth and delightful, occasionally touching emotional depths that resonate deeply.",
+        image: '/images/books/what_do_you_care.png'
+    },
+    {
         title: 'The Demon Haunted World',
         author: 'Carl Sagan',
         thoughts: 'This is one of the best books I have ever read. From aliens to monsters, it reveals how pseudo-science still haunts our world, while technology and science are our lifeline. It also explores the power of human imagination when driven by emotion, not logic. A truly eye-opening read. Carl Sagan is a legend 🔥',
-        image: '/images/demon_world.png'
+        image: '/images/books/demon_world.png'
     },
     {
         "title": "Parashuram: Blood and Dharma",
         "author": "Arnav Anand & Mona Singh",
         "thoughts": "This book offers a unique take on Parashuram, an avatar of Vishnu often less explored. The story is brought to life with a distinctive manga-style animation.",
-        "image": "/images/prashuram.png"
+        "image": "/images/books/prashuram.png"
     },
     {
         title: 'Own Your Body',
         author: 'Shiv Kumar Sarin',
         thoughts: 'I was not interested in health books before, but this one changed my mind. It taught me a lot about the body and the importance of the liver. I even got a full health checkup for me and my family, after reading it! A must-read for anyone wanting to stay healthy',
-        image: '/images/own_your_body.png'
+        image: '/images/books/own_your_body.png'
     },
     {
         title: 'Hands on LLM',
         author: 'Jay Alammar',
         thoughts: 'I have read many ML books, but this one by Jay Alammar is a standout. It covers everything from AI basics to complex LLM architectures. Whether you are a beginner or intermediate, you will definitely learn something new. His in-depth explanations of embeddings and tokenization are excellent.',
-        image: '/images/hands_on_llm.jpg'
+        image: '/images/books/hands_on_llm.jpg'
     },
     {
         "title": "The Hitchhiker's Guide to the Galaxy: Full Set",
         "author": "Douglas Adams",
         "thoughts": "This is a perfect sci-fi fantasy book series. You'll enjoy the time travel journey, which is filled with an awesome punch of humor. Must read if you are fan of time and space.",
-        "image": "/images/hitchhikers.png"
+        "image": "/images/books/hitchhikers.png"
     },
     {
         "title": "How to Win Friends and Influence People",
         "author": "Dale Carnegie",
         "thoughts": "If you're getting this book, make it a yearly read. Carry it with you, read it often, and most importantly, put its lessons into practice. You'll master the art of connecting with and handling people in all situations.",
-        "image": "/images/how_to_win.png"
+        "image": "/images/books/how_to_win.png"
     },
     {
         "title": "When did the Mahabharat War Happen? The mystery of Arrundhati",
         "author": "Nilesh Oak",
         "thoughts": "Imagine the dedication it takes to spend decades uncovering the exact date of the most important cultural event! Nilesh Oak's work is phenomenal, and this book is a testament to his obsession. The mystery of Arundhati will keep you hooked, and while some astronomical and mathematical knowledge is helpful, the payoff is immense. You'll be rewarded with awesome insights and a deep sense of satisfaction.",
-        "image": "/images/mahabharat_war.png"
+        "image": "/images/books/mahabharat_war.png"
     },
     {
         title:'Algorithms to Live By',
         author:'Brian Christian & Tom Griffiths',
         thoughts: 'Overall it can be mind melting and boring sometimes, but it is really good. This book is not for the faint of heart, but for those willing to engage in some serious mental calisthenics, it offers a unique and deeply insightful perspective on the intersection of mathematics, computer science, and real-world problems. Its a challenging but ultimately enriching experience.',
-        image:'/images/algorithms.png'
+        image:'/images/books/algorithms.png'
     },
     {
         "title": "Unfinished Tales",
         "author": "J.R.R Tolkien",
         "thoughts": "Tolkien's imagination shines in this collection of stories that expands upon 'The Hobbit,' 'The Lord of the Rings,' and 'The Silmarillion.' A must-read for those wanting to delve deeper into his world.",
-        "image": "/images/unfinished_tales.png"
+        "image": "/images/books/unfinished_tales.png"
     },
     {
         "title": "The Silmarillion",
         "author": "J.R.R Tolkien",
         "thoughts": "The foundational text for Middle-earth. While challenging, it's a must-read for dedicated Tolkien fans seeking the origins of its history and lore.",
-        "image": "/images/silmarillion.png"
+        "image": "/images/books/silmarillion.png"
     },
     {
         title:'Mahabharat Unravelled II',
         author:'Ami Ganatra',
         thoughts: 'Detailed versions of all the Dharma discourses in Mahabharata. Bought this book because the previous book was awesome, and so is this.',
-        image:'/images/mahabharat_un_2.png'
+        image:'/images/books/mahabharat_un_2.png'
     },
     {
         "title": "Mahabharat Unravelled",
         "author": "Ami Ganatra",
         "thoughts": "This book explores the meaning of Dharma and reveals lesser-known aspects of the Mahabharat. Its clear writing style makes complex concepts easy to understand.",
-        "image": "/images/mahabharat_un_1.png"
+        "image": "/images/books/mahabharat_un_1.png"
     },
     {
         title:'Ramayan Unravelled',
         author:'Ami Ganatra',
         thoughts: 'This book shows the perspective of all characters and it beautifully shows the love of Lord Ram and Mata Sita. Ramayan is something you can read whenever you want because: सीता राम चरित अति पावन। मधुर सरस और अति मनभावन॥ पुनि पुनि कितनेहू सुने सुनाये। हिय की प्यास बुझत न बुझाए॥',
-        image:'/images/ramayan_unravelled.png'
+        image:'/images/books/ramayan_unravelled.png'
     },
     {
         "title": "The Hobbit",
         "author": "J.R.R. Tolkien",
         "thoughts": "hts: 'The journey of Biblo Baggins. You will feel sad when the story ends. From the entry of Gandalf to the battle of five armies, every aspect is wonderful. The hobbits' pure, funny, innocent, grateful, and surprisingly skilled nature will capture your heart. Their love for food and comfort is both a source of laughter and a warm embrace. This enthralling story is a tapestry of wonder, challenges, moments of rest, war, loss, and ultimately, peace and triumph.",
-        "image": "/images/hobbit.png"
+        "image": "/images/books/hobbit.png"
     },
     {
         title:'The Lord of the Rings: Trilogy',
         author:'J.R.R Tolkien',
         thoughts: "Bilbo's nephew Mr Frogo Baggins, is now on another awesome adventue, you will see monsters, goblins, wizards, elves, dwarves and the DARK LORD !! Oskar winning trilogy, so just go for it !!",
-        image:'/images/lord_of_the_rings.png'
+        image:'/images/books/lord_of_the_rings.png'
     },
     {
         "title": "Stardust",
         "author": "Neil Gaiman",
         "thoughts": "This is such a beautiful love story, reminding us that sometimes what we're looking for is also looking for us. The hero's journey is about learning what love truly means through acts of caring, and the story beautifully captures the transformation and love between two characters who are so different.",
-        "image": "/images/stardust.png"
+        "image": "/images/books/stardust.png"
     },
     {
         "title": "The Power of your subconscious Mind",
         "author": "Dr Joseph Murphy",
         "thoughts": "Strong will + your mind = anything is possible. This book proves it.",
-        "image": "/images/power_of_mind.png"
+        "image": "/images/books/power_of_mind.png"
     },
     {
         title:'The Richest Man in Bablylon',
         author:'George S.Clason',
         thoughts: 'It is a beautiful and enduring way to access Clason timeless financial wisdom. The book has simple parables which teaches us essential principles of saving and investing, making it a valuable read for all.',
-        image:'/images/richest_man_in_babylon.png'
+        image:'/images/books/richest_man_in_babylon.png'
     },
     {
         title:'Spiderman India',
         author:'Marvel',
         thoughts: 'It is just fun and you will enjoy your time reading it, as it is friendly neighbourhood spiderman, but in INDIA !!',
-        image:'/images/spider_man.png'
+        image:'/images/books/spider_man.png'
     },
     {
         title:'Think and Grow Rich',
         author:'Napolean Hill',
         thoughts: 'A Descent Read. Good book to read, it will boost the positive thinking inside you.',
-        image:'/images/think_an_grow_rich.png'
+        image:'/images/books/think_an_grow_rich.png'
     },
 ];
 
 const articles = [
 
-        {
+    {
+        title: 'Vietnam Trip: 9 Days of Adventure Across the Country',
+        slug: '/my-life/vietnam-trip',
+        excerpt: 'An incredible 9-day journey through Vietnam with friends. From the stunning Halong Bay cruise to the magical Bana Hills, pristine beaches in Phu Quoc, and vibrant streets of Hanoi. A perfect escape from work life with unforgettable experiences.',
+        date: 'April 2026',
+        readingTime: '15 min',
+        author: 'Vishesh Tripathi'
+    },
+
+    {
+        title: 'The Remote Worker\'s Guide to Goa\'s Best Work-Friendly Cafes',
+        slug: '/my-life/goa-work-cafes',
+        excerpt: 'A curated guide to the best cafes in North Goa where productivity meets coastal charm. Discover spaces perfect for remote work, complete with WiFi, great food, and the laid-back Goan vibe.',
+        date: 'October 14, 2025',
+        readingTime: '12 min',
+        author: 'Vishesh Tripathi'
+    },
+
+    {
+        title: 'Goa in Monsoon 2025',
+        slug: '/my-life/goa-monsoon-2025',
+        excerpt: 'A perfect blend of business and leisure in Goa during monsoon season. From authentic Goan thalis to empty beaches, cultural experiences during Ganesh Visarjan, and discovering hidden gems like Purple Martini and Artjuna Cafe.',
+        date: 'September 7, 2025',
+        readingTime: '12 min',
+        author: 'Vishesh Tripathi'
+    },
+
+    {
+        title: 'Our Epic Rajasthan Road Trip: From Delhi to the Desert and Back',
+        slug: '/my-life/rajasthan-road-trip',
+        excerpt: 'Four friends, one car, and an incredible adventure across Rajasthan. From Delhi to Jaipur to the golden dunes of Jaisalmer and the forts of Bikaner - all for just ₹15,000 per person. Desert safaris, starlit nights, and memories that last forever.',
+        date: '20 August 2025',
+        readingTime: '15 min',
+        author: 'Vishesh Tripathi'
+    },
+
+    {
+        title: 'Ooty Trip 2025 - Mountain Air and Good Vibes',
+        slug: '/my-life/ooty-trip-2025',
+        excerpt: 'A 3-day mountain escape to Ooty with friends - from 4 AM starts and wildlife encounters in Mudumalai to hilltop villas, waterfalls, and that perfect BBQ night under the stars.',
+        date: 'August 10, 2025',
+        readingTime: '12 min',
+        author: 'Vishesh Tripathi'
+    },
+
+    {
+        title: 'ITC Fortune Park Haridwar - Honest Review',
+        slug: '/my-life/itc-fortune-park-haridwar',
+        excerpt: 'A detailed and honest review of my stay at ITC Fortune Park Haridwar, covering location challenges, room quality, dining options, and credit card strategies for ITC properties.',
+        date: 'June 2024',
+        readingTime: '10 min',
+        author: 'Vishesh Tripathi'
+    },
+
+    {
+        title: 'My Experience at Chokhi Dhani Resort Jaipur',
+        slug: '/my-life/chokhi-dhani-jaipur',
+        excerpt: 'A detailed account of my wonderful experience at Chokhi Dhani Resort in Jaipur, including the beautiful rooms, dining options, and the incredible cultural village experience.',
+        date: 'June 21, 2025',
+        readingTime: '8 min',
+        author: 'Vishesh Tripathi'
+    },
+
+    {
+        title: 'The Expectations Loop',
+        slug: '/my-life/the_expectations_loop',
+        excerpt: 'How expectations shape our happiness, the difference between goals and rewards, and how practicing zero expectations can lead to a calmer, more resilient life.',
+        date: 'May 14, 2025',
+        readingTime: '6 min',
+        author: 'Vishesh Tripathi'
+    },
+
+    {
         title: 'Being a Jack of all trades',
         slug: '/my-life/jack_of_all_trades',
         excerpt: 'Exploring the power of being multidimensional in a world that often pushes for specialization, and why being a "Jack of all trades" might be exactly what the future needs.',
@@ -153,39 +334,51 @@ const articles = [
         date: 'January 15, 2025',
         readingTime: '10 min',
         author: 'Vishesh Tripathi'
-    },
+    }
 ];
 
 const bucketList = [
     { task: 'Get Featured in the Economic Times', completed: true },
-    { task: 'Win 5 Hackathons/Competitions', completed: true },
+    { task: 'Win multiple Hackathons/Competitions', completed: true },
     { task: 'Publish a Research Paper', completed: true },
     { task: 'Get a Paper Accepted at EMNLP', completed: true },
     { task: 'Speak at an IIT', completed: false },
     { task: 'Go Scuba-Diving', completed: false },
+    { task: 'A Goa Trip', completed: true },
     { task: 'Go Skydiving', completed: false },
-    { task: 'Go Bungee Jumping', completed: false },
-    { task: 'Camping', completed: true },
-    { task: 'Go Paragliding', completed: true },
+    { task: 'Go Paragliding', completed: false },
+    { task: 'Visit Blue Mountains of India with friends', completed: true },
+    { task: '10K subscribers on YouTube', completed: false },
+    { task: 'Live in a Foreign Country for a Few Months', completed: false },
+    { task: 'Write a Book or Memoir', completed: false },
+    { task: 'Start own podcast', completed: false },
+    { task: 'Do a Digital Detox for a Week', completed: true },
+    { task: 'Go Camping', completed: true },
+    { task: 'Go Parasailing', completed: true },
     { task: 'Ride a Desert Safari', completed: true },
+    { task: 'Spend the Christmas in Munich and Vienna', completed: false },
+    { task: 'Work from Goa for a month', completed: true },
     { task: 'Go on a Jungle Safari', completed: true },
+    { task: 'Experience a Hot Stone Massage', completed: true},
     { task: 'Visit Haunted Forts', completed: true },
     { task: 'Learn to Play the Flute', completed: true },
-    { task: 'Travel to South East Asian Countries', completed: false },
+    { task: 'Travel to Vietnam', completed: true },
     { task: 'Read 100 Books', completed: false },
     { task: 'Run a Marathon', completed: true },
-    { task: 'Achieve an 8-Digit Finance Portfolio', completed: false},
-    { task: 'Attend a Coldplay/Green Day Concert', completed: false },
-    { task: 'Go on a Cruise', completed: false },
-    { task: 'Go on a Trek', completed: false },
-    { task: 'Create my own Python Library/Package', completed: false },
-    { task: 'Visit Egypt and Nile', completed: false },
+    { task: 'Visit Universal Studios', completed: false },
+    { task: 'Trying elite skin products', completed: true },
+    { task: 'A 8-Digit Finance Portfolio', completed: false},
+    { task: 'A Road Trip through the Himalayas in Ladakh', completed: false },
+    { task: 'Attend a Green Day Concert', completed: false },
+    { task: 'Go on a Cruise', completed: true },
+    { task: 'Go on a long Trek', completed: false },
+    { task: 'Visit Egypt Pyramids and Nile River', completed: false },
     { task: 'Wear a Costume at Comic Con', completed: false },
-    { task: 'Visit Ayodhya and the Ram Mandir', completed: false },
-    { task: 'Attend an ML Conference', completed: false },
+    { task: 'Visit Ayodhya', completed: false },
     { task: 'Visit Hobbit Homes in New Zealand', completed: false },
-    { task: 'Watch the Northern Lights in Norway', completed: false },
-    { task: 'Finding the ultimate Purpose', completed: false },
+    { task: 'Visit Santa Claus Village and stay at a Igloo', completed: false },
+    { task: 'Watch the Northern Lights', completed: false },
+    { task: 'Finding the ultimate Purpose', completed: true },
     { task: "trouver l'amour de la vie", completed: false },
 ];
 
@@ -223,7 +416,7 @@ const totalTasks = bucketList.length;
         <h2>My Bucket List</h2>
         <p class="bucket-list-progress">
             Things I want to do !! Recommendations are welcome !!<br>
-            Progress as of january 1, 2025: {completedTasks}/{totalTasks}
+            Progress as of December 1, 2025: {completedTasks}/{totalTasks}
         </p>
         <ul class="bucket-list">
             {bucketList.map(item => (
@@ -296,7 +489,7 @@ const totalTasks = bucketList.length;
 
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
-            const target = tab.dataset.tab;
+            const target = (tab as HTMLElement).dataset.tab;
             
             tabs.forEach(t => t.classList.remove('active'));
             contents.forEach(c => c.classList.remove('active'));

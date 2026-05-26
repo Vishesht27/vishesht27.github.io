@@ -53,6 +53,43 @@ const { testimonials } = Astro.props;
         height: 200px;
     }
 
+    @media (max-width: 768px) {
+        .testimonial-carousel {
+            padding: 1.5rem;
+        }
+
+        .carousel-container {
+            height: auto;
+            min-height: 250px;
+        }
+
+        .testimonial-slide {
+            padding: 0.5rem;
+        }
+
+        .quote {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .author-info {
+            gap: 0.75rem;
+        }
+
+        img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .author-name {
+            font-size: 0.9rem;
+        }
+
+        .author-role {
+            font-size: 0.8rem;
+        }
+    }
+
     .testimonial-slide {
         position: absolute;
         top: 0;

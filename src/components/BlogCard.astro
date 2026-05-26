@@ -73,4 +73,32 @@ const { title, excerpt, date, readingTime, author, slug } = Astro.props;
     .read-more:hover {
         text-decoration: underline;
     }
+
+    @media (max-width: 768px) {
+        .blog-card {
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .excerpt {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .meta {
+            font-size: 0.85rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .meta span {
+            margin: 0;
+        }
+    }
 </style>

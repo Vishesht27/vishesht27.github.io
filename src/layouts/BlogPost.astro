@@ -1,6 +1,7 @@
 ---
 import Layout from './Layout.astro';
 import SocialLinks from '../components/SocialLinks.astro';
+import Comments from '../components/Comments.astro';
 
 interface Props {
     title: string;
@@ -40,6 +41,7 @@ const { title, date, readingTime, author, nextPost } = Astro.props;
             </div>
         )}
 
+        <Comments />
 
     </article>
 </Layout>
@@ -89,5 +91,44 @@ const { title, date, readingTime, author, nextPost } = Astro.props;
         margin-top: 4rem;
         padding-top: 2rem;
         border-top: 1px solid #eee;
+    }
+
+    @media (max-width: 768px) {
+        .blog-post {
+            padding: 1rem 0;
+        }
+
+        header {
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            line-height: 1.3;
+        }
+
+        .meta {
+            font-size: 0.9rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .meta span {
+            margin: 0;
+        }
+
+        .content {
+            line-height: 1.7;
+        }
+
+        .content :global(img) {
+            margin: 1.5rem 0;
+        }
+
+        .next-post {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+        }
     }
 </style>

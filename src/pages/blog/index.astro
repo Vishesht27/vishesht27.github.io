@@ -5,6 +5,15 @@ import BlogCard from '../../components/BlogCard.astro';
 const posts = [
 
     {
+        title:'LLMs are thinking, But is it Helping ?',
+        slug: '/blog/llms-are-thinking',
+        excerpt: 'The rise of thinking LLMs has been one of the most exciting developments in AI. But are they actually getting better at what we need them to do?',
+        date: 'June 12, 2025',
+        readingTime: '10 min',
+        author: 'Vishesh Tripathi'
+    },
+
+    {
         title: 'Intro to Agents',
         slug: '/blog/understanding_agents',
         excerpt: 'What exactly are Agents, are they the future, and how they can revolutionize the whole world.',
@@ -25,8 +34,8 @@ const posts = [
 ];
 ---
 
-<Layout title="Blog">
-    <h1>Blog Posts</h1>
+<Layout title="Tech Blog">
+    <h1>Tech Blog</h1>
     <div class="posts">
         {posts.map(post => (
             <BlogCard

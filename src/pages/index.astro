@@ -5,20 +5,22 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="Vishesh Tripathi">
     <div class="intro">
         <div class="bio">
- 		<p>Vishesh Tripathi, LLM Research Engineer.</p>
+		<p>Vishesh Tripathi, LLM Research Engineer.</p>
+		<p>Building FrontiersMind, a frontiers research AI lab.</p>
 		<p>Tuning life's parameters, one epoch at a time.</p>
-		<p>Previously a Machine Learning Engineer at Yellow.ai and the Indian Institute of Technology. Founder of Kisaan Pro and winner of multiple hackathons and competitions.</p>
-		<p>Graduate of Vellore Institute of Technology. I also run the YouTube channel, Tensordroid, with over 850 subscribers. I enjoy reading and playing musical instruments, especially the flute and guitar.</p>
-		<p>I frequently speak at <a href="/talks">Tech Events</a> and offer <a href="/about#mentorship_session">Mentorship Sessions</a>.</p>
-		<p> I am passionate about tackling complex technical challenges and collaborating with high-performing teams. Please feel free to <a href="/about#connect_with_me">reach out<a/> if you are interested in exploring potential collaborations</p>
+		<p>Ex-AI Engineer at Yellow.ai. Previously a research intern at IIT Jodhpur.</p>
+		<p>Featured in the Economic Times and named among the Top 10 E-School Leaders in 2023, with wins in competitions including Microsoft Imagine Cup, Smart India Hackathon, and Meraki.</p>
+		<p>A graduate of Vellore Institute of Technology. I also run the YouTube channel Tensordroid, with over 2K subscribers. I enjoy reading and playing musical instruments, especially the flute and guitar.</p>
+		<p>I frequently speak at <a href="/talks">tech events</a> and offer <a href="/about#mentorship_session">mentorship sessions</a>.</p>
+		<p>I am passionate about tackling complex technical challenges and collaborating with high-performing teams. Please feel free to <a href="/about#connect_with_me">reach out</a> if you are interested in exploring potential collaborations.</p>
 		</div>
         <div class="profile-section">
             <div class="profile-image">
-                <img src="/images/devfest_pic.JPG" alt="Vishesh Tripathi" />
+                <img src="/images/profile/devfest_pic.JPG" alt="Vishesh Tripathi" />
             </div>
             <div class="quote-box">
                 <blockquote>
-                    <p class="sanskrit">The way I see it, every life is a pile of good things and bad things. The good things don’t always soften the bad things, but vice versa, the bad things don’t always spoil the good things and make them unimportant.</p>
+                    <p class="sanskrit">The way I see it, every life is a pile of good things and bad things. The good things don't always soften the bad things, but vice versa, the bad things don't always spoil the good things and make them unimportant.</p>
                     <cite>The Eleventh Doctor</cite>
                 </blockquote>
             </div>
@@ -95,7 +97,8 @@ import Layout from '../layouts/Layout.astro';
     @media (max-width: 768px) {
         .intro {
             flex-direction: column;
-            gap: 2rem;
+            gap: 1.5rem;
+            padding-top: 1rem;
         }
 
         .profile-section {
@@ -104,12 +107,33 @@ import Layout from '../layouts/Layout.astro';
         }
 
         .profile-image {
-            width: 180px;
-            height: 180px;
+            width: 150px;
+            height: 150px;
         }
 
         .quote-box {
-            max-width: 280px;
+            max-width: 100%;
+            padding: 0.75rem;
+        }
+
+        .sanskrit {
+            font-size: 0.8rem;
+        }
+
+        .bio p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .profile-image {
+            width: 120px;
+            height: 120px;
+        }
+
+        .bio p {
+            font-size: 0.95rem;
         }
     }
 </style>
