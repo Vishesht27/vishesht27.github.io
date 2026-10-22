@@ -8,27 +8,30 @@ interface Props {
     date: string;
     readingTime: string;
     author: string;
+    immersive?: boolean;
     nextPost?: {
         title: string;
         slug: string;
     };
 }
 
-const { title, date, readingTime, author, nextPost } = Astro.props;
+const { title, date, readingTime, author, immersive = false, nextPost } = Astro.props;
 ---
 
-<Layout title={title}>
-    <article class="blog-post">
-        <header>
-            <h1>{title}</h1>
-            <div class="meta">
-                <span>Date: {date}</span>
-                <span>|</span>
-                <span>Reading Time: {readingTime}</span>
-                <span>|</span>
-                <span>Author: {author}</span>
-            </div>
-        </header>
+<Layout title={title} bodyClass={immersive ? 'immersive-dark' : undefined}>
+    <article class:list={['blog-post', immersive && 'blog-post--immersive']}>
+        {!immersive && (
+            <header>
+                <h1>{title}</h1>
+                <div class="meta">
+                    <span>Date: {date}</span>
+                    <span>|</span>
+                    <span>Reading Time: {readingTime}</span>
+                    <span>|</span>
+                    <span>Author: {author}</span>
+                </div>
+            </header>
+        )}
 
         <div class="content">
             <slot />
@@ -51,6 +54,10 @@ const { title, date, readingTime, author, nextPost } = Astro.props;
         max-width: 800px;
         margin: 0 auto;
         padding: 2rem 0;
+    }
+    .blog-post--immersive {
+        max-width: 860px;
+        padding: 0;
     }
     header {
         margin-bottom: 2rem;

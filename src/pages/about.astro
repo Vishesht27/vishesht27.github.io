@@ -6,6 +6,18 @@ import SocialLinks from '../components/SocialLinks.astro';
 
 const research = [
     {
+        title: 'Grouped Value Attention',
+        image: '/images/research/grouped_value_attention.png',
+        description: 'An attention variant that caches grouped values and reconstructs content keys on demand via a learned linear map absorbed into the query, cutting persistent KV cache by ~45-47% versus GQA with near-GQA accuracy',
+        paperLink: 'https://arxiv.org/abs/2609.13285'
+    },
+    {
+        title: 'Grouped Query Experts',
+        image: '/images/research/grouped_query_experts.png',
+        description: 'A mixture-of-experts layer on grouped-query attention that routes each token to a subset of query-head experts while keeping KV heads dense, matching GQA accuracy with half the query heads active and 1.7-1.8x faster long-context prefill',
+        paperLink: 'https://arxiv.org/abs/2606.20945'
+    },
+    {
         title: 'Vision-Guided Chunking Is All You Need',
         image: '/images/research/vision_guided_chunking.png',
         description: 'A novel multimodal document chunking approach that leverages LMMs to process PDF documents in batches while maintaining semantic coherence and structural integrity',
@@ -68,7 +80,7 @@ const socials = [
 <Layout title="About Me">
     <h1>About Me</h1>
 
-    <p>Here you'll find information about me, my research, how to get in touch, testimonials, and details on how to schedule a mentorship session.</p>
+    <p>Here you'll find information about me, my research, how to get in touch, and testimonials.</p>
 
     
     <section>
@@ -114,25 +126,6 @@ const socials = [
         </li>
     </ul>
             
-        </div>
-    </section>
-
-    <section id="mentorship_session">
-        <h2>Mentorship</h2>
-        <br>
-        <div class="card">
-        <h3>Interested in AI/ML? Let's Connect!</h3>
-        <p>I provide mentorship for those eager to explore the world of Artificial Intelligence and Machine Learning. Learn more and book a session below.</p>
-        <br>
-        <a href="https://unstop.com/mentor/vishesh?ref=kzVULcm" target="_blank" rel="noopener noreferrer">
-            Book a Session on Unstop →
-        </a>
-        <br>
-        <br>
-        <a href="https://topmate.io/vishesh_tripathi" target="_blank" rel="noopener noreferrer">
-            Book a Session on Topmate →
-        </a>
-
         </div>
     </section>
 </Layout>

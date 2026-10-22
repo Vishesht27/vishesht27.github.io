@@ -5,6 +5,138 @@ import BookCard from '../components/BookCard.astro';
 
 const books = [
     {
+        title: 'The Monk Who Sold His Ferrari',
+        author: 'Robin Sharma',
+        thoughts: 'The book is great for people who are doing well, maybe professionally, but not in their personal and spiritual life. Robin gives great advice in the form of such beautiful stories. Life is neither in the past nor in the future, but in the present, because happiness is not a destination, but a journey.',
+        image: '/images/books/the_monk_who_sold_his_ferrari.png'
+    },
+    {
+        title: 'Secrets of Sand Hill Road',
+        author: 'Scott Kupor',
+        thoughts: 'One of the greatest books ever written for anyone who is in the middle of raising investments. The details are unmatched, and it is good for beginners as well. A must-read—this helped me a lot while I was working on my startup.',
+        image: '/images/books/secrets_of_sand_hill_road.png'
+    },
+    {
+        title: 'The Penguin Book of Indian Ghost Stories',
+        author: 'Ruskin Bond',
+        thoughts: 'An okayish book. I found 2–3 stories decent (not very good), but the rest were not good writing at all. I enjoyed neither the writing nor the stories.',
+        image: '/images/books/penguin_indian_ghost_stories.png'
+    },
+    {
+        title: 'The Great Gatsby',
+        author: 'F. Scott Fitzgerald',
+        thoughts: 'It was an okay book, although the hype around it felt too much after I read it. The concept of old money vs new money, not being able to move on from the past, and trying to reshape someone\'s memories itself—love, betrayal, and so much around the Great American Dream. The book opens a Pandora\'s box of secrets.',
+        image: '/images/books/great_gastby.png'
+    },
+    {
+        title: 'The Thinking Machine: Nvidia\'s Story',
+        author: 'Stephen Witt',
+        thoughts: 'An awesome book if you are someone interested in the world of compute and artificial intelligence. As I have been working in this domain for 3–4 years now, it felt like seeing the story from the other side—how things usually work and how hard it was for Jensen to build the whole company from scratch.',
+        image: '/images/books/the_thinking_machine.png'
+    },
+    {
+        title: 'Only Dull People Are Brilliant at Breakfast',
+        author: 'Oscar Wilde',
+        thoughts: 'A short 50-page book filled with wit and humour by Oscar Wilde. Some of the lines are just so freaking good and funny. If you are someone who doesn\'t need a story or self-help to read a book, but can enjoy random thoughts from an author, this one will interest you.',
+        image: '/images/books/only_dull_people.png'
+    },
+    {
+        title: 'The Adventures of Tom Bombadil',
+        author: 'J.R.R. Tolkien',
+        thoughts: 'Coming from the Tolkien universe, I loved it—but if you love stories and not poems, it may disappoint you, as all the pieces are in verse. Still, the sweet little tales from the universe, and references from The Lord of the Rings and The Hobbit, remind you of the good old days.',
+        image: '/images/books/adventures_of_tom.png'
+    },
+    {
+        title: 'Slaughterhouse-Five',
+        author: 'Kurt Vonnegut',
+        thoughts: 'A different type of book, and one you can read multiple times to see a completely different point of view. Because this is a book about time slipping and travel, you understand the same perspective from multiple angles.',
+        image: '/images/books/slaughterhouse_five.png'
+    },
+    {
+        title: 'Apple in China',
+        author: 'Patrick McGee',
+        thoughts: 'A long book covering Apple\'s journey from downfall to rise, from the USA to China, and how China slowly overcame Apple and started controlling it. Even after Apple being the world\'s biggest and richest company, it bends itself in front of China.',
+        image: '/images/books/apple_in_china.png'
+    },
+    {
+        title: 'How Much Land Does a Man Need',
+        author: 'Leo Tolstoy',
+        thoughts: 'A short 20-page book with a really good life lesson.',
+        image: '/images/books/how_much_land_does_a_man_need.png'
+    },
+    {
+        title: 'Notes from Underground',
+        author: 'Fyodor Dostoevsky',
+        thoughts: 'I read roughly 60% of the book, but realised by then that this is not the type of book I usually love. The initial part was good, but after the first 10%, it went out of my mind only.',
+        image: '/images/books/notes_from_underground.png'
+    },
+    {
+        title: 'The Master and Margarita',
+        author: 'Mikhail Bulgakov',
+        thoughts: 'A masterpiece by Bulgakov. People can have different interpretations for this novel. The book\'s initial few chapters can be hard to read, but stick with it. Bulgakov\'s writing will show you magic after a few chapters, when the world building is done. For some this may be a satire on the Soviet Union regime, for some this may be good vs evil, for some this may be satan vs god, and for some maybe this is a love story. But it\'s just a wonderful book.',
+        image: '/images/books/master_and_margerrita.png'
+    },
+    {
+        title: 'The Secret History',
+        author: 'Donna Tartt',
+        thoughts: 'One of the finest novels I have ever read in life. A dark academia—it\'s really long, more than 600 pages, and at times you may feel they are stretching things more than required. But it\'s a feature, not a bug for sure. I would suggest you stick with the story; the last 50 pages will put you through a lot of pain, but it\'s fine—you expect the ending to be like that when you are reading a dark academia. One should definitely give Donna Tartt\'s this one a shot; you will enjoy the writing.',
+        image: '/images/books/the_secret_history.png'
+    },
+    {
+        title: 'The Strange Case of Dr. Jekyll and Mr. Hyde and Other Tales of Terror',
+        author: 'Robert Louis Stevenson',
+        thoughts: 'A short yet interesting book—you will get an idea of the story from the very 2nd chapter itself, although the final twist will be different from what most people expect. A short and yet dark, twisting story.',
+        image: '/images/books/strange_case.png'
+    },
+    {
+        title: 'No Longer Human',
+        author: 'Osamu Dazai',
+        thoughts: 'No Longer Human was a fascinating but frustrating read for me. Yozo constantly blames humanity for his suffering while repeatedly making cowardly and destructive choices himself. He wants the pleasures of life—sex, drinking, prostitution, food, etc.—but treats responsibility and consequences as proof that humans are terrible. The incident with Yoshiko especially made me question his entire worldview; instead of confronting reality, he retreats further into himself. I don\'t see Yozo as someone who discovered some deep truth about humanity, but as someone who became incapable of dealing with it. A tragic character, but not a philosopher I agree with.',
+        image: '/images/books/no_longer_human.png'
+    },
+    {
+        title: 'Surrounded by Idiots',
+        author: 'Thomas Erikson',
+        thoughts: 'I would definitely rate it 4 stars. It dives deep into different human psychologies—how they work and how one can deal with the four types of people in real life. As someone in business, or anyone who has to deal with different kinds of people day to day, this book is a pure gold mine.',
+        image: '/images/books/surrounded_by_idiots.png'
+    },
+    {
+        title: 'The Death of Ivan Ilyich & Other Stories',
+        author: 'Leo Tolstoy',
+        thoughts: 'The magic of Leo Tolstoy is visible in the writing. From the initial phase itself, the story declares everything to you, but you have to follow through till the end to find the consequences and how we got there. Especially in "The Death of Ivan Ilyich," you learn of his death within the first ten lines, but the pain, suffering, and path to that point are described over the next fifty pages. It is brilliance in philosophy, reflecting his views on death and life, and on why caring what society thinks about you is a complete illusion.',
+        image: '/images/books/death_of_ivan_ilyich.png'
+    },
+    {
+        title: 'Madonna in a Fur Coat',
+        author: 'Sabahattin Ali',
+        thoughts: 'This book was beautiful and heartbreaking at the same time. You read it and realise what happens when love and destiny are completely against each other. It is emotionally haunting and will break your heart at the end. Although the character\'s life motivations feel like a loose thread at times, the writing is still beautiful. Must read!',
+        image: '/images/books/madonna_in_a_fur_coat.png'
+    },
+    {
+        title: 'Beyond Good and Evil',
+        author: 'Friedrich Nietzsche',
+        thoughts: 'This book is more like Meditations—if you want to read thoughts and philosophy without any story context from any page of the book, this one is for you. I personally don\'t like such books, so this was not something I enjoyed. I still pick it up and read it sometimes, out of nowhere.',
+        image: '/images/books/beyond_good_and_evil.png'
+    },
+    {
+        title: 'The Aleph',
+        author: 'Jorge Luis Borges',
+        thoughts: 'It is a set of short stories, but maybe it is not my thing—I couldn\'t understand most of them. The only story I understood was the first one, "The Immortal," and that was a good one. I tried the other seven or eight, but none of them made sense to me. Maybe this book is not for me. People who love metaphysical stories may enjoy it, but my recommendation is to skip it.',
+        image: '/images/books/the_aleph.png'
+    },
+    {
+        title: '1984',
+        author: 'George Orwell',
+        thoughts: 'George Orwell does it again—another book with an extremely heartbreaking ending. The purpose and whole concept of living exist solely in proportion to how much freedom you have. If you don\'t have freedom, it doesn\'t matter whether you are alive or dead—you are always dead. Go read it and understand how much freedom we have and how it feels. It has a sad ending, but it shows power and control starkly.',
+        image: '/images/books/1984.png'
+    },
+    {
+        title: 'Animal Farm',
+        author: 'George Orwell',
+        thoughts: 'If you love satire and dislike communism, this one is for you. Excellent writing by George Orwell, as always. Each character represents an important figure from the Russian Revolution. You realise this is how psychology works across all living creatures—humans, animals, all of them. Whenever anyone tastes power, they tend toward corruption. This book is proof that democracy may not be perfect, but it is the best we can get for our current times, when the human mind\'s evolution is at its peak.',
+        image: '/images/books/animal_farm.png'
+    },
+    {
         title: 'After Dark',
         author: 'Haruki Murakami',
         thoughts: 'This was a completely new kind of read for me. I know Murakami is famous for this. The whole book (~200 pages) covers a single night; new characters come and go, and you are an observer. The stories are interesting, and the last 50 pages really pull you in, but by the end you are left with many unanswered questions and a neutral ending—you never quite know what actually happened. Still, I would recommend giving it a shot. It is an interesting take.',
@@ -238,6 +370,15 @@ const books = [
 const articles = [
 
     {
+        title: 'The Cease of Existence',
+        slug: '/my-life/the-cease-of-existence',
+        excerpt: 'A metaphysical meditation on suffering, love, faith, and meaning. From Dostoevsky\'s sadness to Orwell\'s slogans, from the selfishness hidden in compassion to Nietzsche\'s call to create your own purpose—what does it all mean when death is the only certainty?',
+        date: 'August 13, 2026',
+        readingTime: '12 min',
+        author: 'Vishesh Tripathi'
+    },
+
+    {
         title: 'Vietnam Trip: 9 Days of Adventure Across the Country',
         slug: '/my-life/vietnam-trip',
         excerpt: 'An incredible 9-day journey through Vietnam with friends. From the stunning Halong Bay cruise to the magical Bana Hills, pristine beaches in Phu Quoc, and vibrant streets of Hanoi. A perfect escape from work life with unforgettable experiences.',
@@ -339,10 +480,9 @@ const articles = [
 
 const bucketList = [
     { task: 'Get Featured in the Economic Times', completed: true },
-    { task: 'Win multiple Hackathons/Competitions', completed: true },
+    { task: 'Win a top Hackathon/Competition', completed: true },
     { task: 'Publish a Research Paper', completed: true },
-    { task: 'Get a Paper Accepted at EMNLP', completed: true },
-    { task: 'Speak at an IIT', completed: false },
+    { task: 'Get a Paper Accepted at Top Conference', completed: true },
     { task: 'Go Scuba-Diving', completed: false },
     { task: 'A Goa Trip', completed: true },
     { task: 'Go Skydiving', completed: false },
@@ -351,7 +491,6 @@ const bucketList = [
     { task: '10K subscribers on YouTube', completed: false },
     { task: 'Live in a Foreign Country for a Few Months', completed: false },
     { task: 'Write a Book or Memoir', completed: false },
-    { task: 'Start own podcast', completed: false },
     { task: 'Do a Digital Detox for a Week', completed: true },
     { task: 'Go Camping', completed: true },
     { task: 'Go Parasailing', completed: true },
@@ -362,19 +501,17 @@ const bucketList = [
     { task: 'Experience a Hot Stone Massage', completed: true},
     { task: 'Visit Haunted Forts', completed: true },
     { task: 'Learn to Play the Flute', completed: true },
-    { task: 'Travel to Vietnam', completed: true },
-    { task: 'Read 100 Books', completed: false },
-    { task: 'Run a Marathon', completed: true },
-    { task: 'Visit Universal Studios', completed: false },
+    { task: 'Spend a night in French Village Bana Hills', completed: true },
+    { task: 'Read all intial bucket list books', completed: true },
+    { task: 'Visit Universal Studios', completed: true },
     { task: 'Trying elite skin products', completed: true },
     { task: 'A 8-Digit Finance Portfolio', completed: false},
     { task: 'A Road Trip through the Himalayas in Ladakh', completed: false },
     { task: 'Attend a Green Day Concert', completed: false },
     { task: 'Go on a Cruise', completed: true },
-    { task: 'Go on a long Trek', completed: false },
+    { task: 'Go on a Trekking Trip', completed: false },
     { task: 'Visit Egypt Pyramids and Nile River', completed: false },
     { task: 'Wear a Costume at Comic Con', completed: false },
-    { task: 'Visit Ayodhya', completed: false },
     { task: 'Visit Hobbit Homes in New Zealand', completed: false },
     { task: 'Visit Santa Claus Village and stay at a Igloo', completed: false },
     { task: 'Watch the Northern Lights', completed: false },
@@ -416,7 +553,7 @@ const totalTasks = bucketList.length;
         <h2>My Bucket List</h2>
         <p class="bucket-list-progress">
             Things I want to do !! Recommendations are welcome !!<br>
-            Progress as of December 1, 2025: {completedTasks}/{totalTasks}
+            Progress as of July 1, 2026: {completedTasks}/{totalTasks}
         </p>
         <ul class="bucket-list">
             {bucketList.map(item => (

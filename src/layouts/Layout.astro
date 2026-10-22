@@ -1,9 +1,10 @@
 ---
 interface Props {
 	title: string;
+	bodyClass?: string;
 }
 
-const { title } = Astro.props;
+const { title, bodyClass } = Astro.props;
 import SocialLinks from '../components/SocialLinks.astro';
 ---
 
@@ -16,10 +17,18 @@ import SocialLinks from '../components/SocialLinks.astro';
 		<link rel="icon" type="image/svg+xml" href="/images/krishna.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<!-- Google Analytics -->
+		<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-TWDPQSRQQM"></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-TWDPQSRQQM');
+		</script>
 		<!-- Import Lora font -->
 		<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet" />
 	</head>
-	<body>
+	<body class={bodyClass}>
 		<nav>
 			<div class="nav-container">
 				<a href="/" class="logo">Vishesh Tripathi</a>
